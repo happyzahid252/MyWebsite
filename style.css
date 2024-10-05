@@ -1,0 +1,834 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #101010;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(to right, #ff6ec4, #7873f5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navlogo a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navlogo a:hover {
+    color: #00ffff;
+}
+
+.navlinks {
+    display: flex;
+    gap: 30px;
+}
+
+.navlinks a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.navlinks a i {
+    margin-right: 8px;
+}
+
+.navlinks a:hover {
+    color: #00ffff;
+}
+
+/* Hover Effect for Advanced Look */
+.navlinks a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00ffff;
+    transition: width 0.3s ease;
+}
+
+.navlinks a:hover::before {
+    width: 100%;
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .navlinks {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+        transition: all 0.4s ease;
+    }
+
+    .navlinks.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .navlinks a {
+        padding: 10px 0;
+        font-size: 1.3rem;
+    }
+}
+
+/* Futuristic Transitions */
+.navbar-transition {
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #6ac1e0, #fff);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+   /* Fullscreen Section with Background Image */
+   .main-interface-full-page-first-view {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(ARSALAN\ ZAHID.png); /* 4K Placeholder */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    color: #fff;
+}
+
+/* Text Container */
+.main-text {
+    font-size: 3rem;
+    font-weight: 700;
+    animation: fadeIn 2s ease-in-out;
+    max-width: 80%; /* Added to avoid overflow */
+    word-wrap: break-word; /* Ensures that long words don't overflow */
+}
+
+/* Welcome Text */
+.main-text h1 {
+    margin-bottom: 15px;
+    font-size: 4rem;
+    color: #40E0D0; /* Change this to your preferred header color */
+}
+
+/* Typing Effect Container */
+.typed-text {
+    font-size: 2.5rem;
+    color: #FF7F50; /* Change this to your preferred subtext color */
+    border-right: 2px solid #fff; /* Blinking Cursor Effect */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes erasing {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+/* Typing and Erasing Effect */
+.typed-text span {
+    display: inline-block;
+    animation: typing 3s steps(30) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* Blinking Cursor Effect */
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design: Small Devices */
+@media (max-width: 1200px) {
+    .main-text {
+        font-size: 2.5rem;
+    }
+    .main-text h1 {
+        font-size: 3.5rem;
+    }
+    .typed-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .main-interface-full-page-first-view {
+        padding-left: 30px;
+    }
+    .main-text {
+        font-size: 2rem;
+    }
+    .main-text h1 {
+        font-size: 3rem;
+    }
+    .typed-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-interface-full-page-first-view {
+        
+        padding-left: 20px;
+        align-items: flex-start; /* Align text at the top in small screens */
+        padding-top: 50px;
+    }
+    .main-text {
+        font-size: 1.8rem;
+    }
+    .main-text h1 {
+        position: relative;
+        top: 100px;
+        font-size: 2.5rem;
+    }
+    .typed-text {
+        position: relative;
+        top: 100px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-text {
+        font-size: 1.5rem;
+    }
+    .main-text h1 {
+        font-size: 2rem;
+    }
+    .typed-text {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Styling */
+.learning-section {
+    background: black;
+    padding: 50px 20px; /* Padding around the section */
+}
+
+/* Container */
+.container {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+    max-width: 1200px; /* Maximum width for the container */
+    margin: auto; /* Center the container */
+    animation: fadeIn 1s ease-in-out; /* Fade in animation */
+}
+
+/* Text Content */
+.text-content {
+    flex: 1; /* Allow text content to take available space */
+    color: white; /* Text color */
+    padding-right: 20px; /* Space between text and image */
+}
+
+.text-content h2 {
+    font-size: 2.5rem; /* Font size for the heading */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.text-content p {
+    font-size: 1.2rem; /* Font size for paragraph */
+    font-weight: bold; /* Bold text */
+}
+
+/* Image Content */
+.image-content {
+    flex: 1; /* Allow image content to take available space */
+    display: flex; /* Flexbox for image alignment */
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.image-content img {
+    width: 100%; /* Set image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px; /* Smooth border radius */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.image-content img:hover {
+    transform: scale(1.05); /* Scale image on hover for effect */
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Start invisible */
+    to { opacity: 1; } /* End visible */
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .image-content {
+        margin-top: 20px; /* Add margin for separation */
+    }
+}
+/* Button Styling */
+.learn-more-btn {
+    display: inline-block; /* Make it inline block for proper spacing */
+    background-color: #ff6ec4; /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Button Hover Effect */
+.learn-more-btn:hover {
+    background-color: #7873f5; /* Change color on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Blog Section Styling */
+.blog-section {
+    background: linear-gradient(to right, #ff0099, #0800ff); /* Gradient background */
+    padding: 50px 20px; /* Padding around the section */
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Maximum width for the container */
+    margin: auto; /* Center the container */
+    text-align: center; /* Center text */
+}
+
+/* Heading */
+.heading {
+    font-size: 3.5rem; /* Large font size */
+    font-weight: bold; /* Bold text */
+    color: #ffffff; /* Text color */
+    margin-bottom: 30px; /* Space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
+    animation: fadeInUp 1s ease forwards; /* Animate heading */
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-30px); /* Move up */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+/* Blog Cards */
+.blog-cards {
+    display: flex; /* Flex layout for cards */
+    justify-content: space-between; /* Space cards evenly */
+    margin: 0 auto; /* Center the blog cards */
+    max-width: 1000px; /* Limit the width of the blog cards */
+}
+
+/* Blog Card */
+.blog-card {
+    background: rgb(0, 0, 0); /* Background for blog cards */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 20px; /* Margin between cards */
+    padding: 20px; /* Padding inside cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+    position: relative; /* Position for button */
+    width: 30%; /* Fixed width for cards */
+}
+
+.blog-card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+/* Blog Image */
+.blog-card img {
+    width: 100%; /* Set image to fill the card */
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+/* Short Description */
+.short-description {
+    font-size: 1.1rem; /* Font size for short description */
+    margin: 15px 0; /* Space around short description */
+    color: #dddddd; /* Text color */
+}
+
+/* Full Content Hidden by Default */
+.full-content {
+    display: none; /* Hide full content initially */
+    text-align: left; /* Left-align full content text */
+}
+
+/* Read More Button */
+.read-more {
+    background: #ff6ec4; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth background and scale change */
+    font-size: 1rem; /* Font size */
+}
+
+.read-more:hover {
+    background: #7873f5; /* Background color on hover */
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .blog-cards {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .blog-card {
+        width: 90%; /* Make cards wider on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact Section Styling */
+.contact-section {
+    height: 700px;
+    background: linear-gradient(to right, #1a1a2e, #16213e); /* Futuristic gradient background */
+    padding: 50px 20px; /* Padding around the section */
+    color: #fff; /* Text color */
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Maximum width for the container */
+    margin: auto; /* Center the container */
+    text-align: center; /* Center align the text */
+}
+
+/* Heading */
+.contact-heading {
+    position: relative;
+    left: 33%;
+    bottom: 100px;
+    font-size: 3rem; /* Big heading */
+    font-weight: bold; /* Bold text */
+    color: #ff6ec4; /* Attractive color */
+    text-shadow: 0 0 20px #ff6ec4; /* Neon glow effect */
+    margin-bottom: 30px; /* Space below heading */
+    animation: glow 1.5s infinite alternate; /* Animation */
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Vertical layout */
+    align-items: center; /* Center items */
+}
+form {
+    position: relative;
+    top: 100px;
+    width: 500px;
+}
+/* Input Fields */
+.input-field, .textarea-field {
+    width: 80%; /* Width of the input fields */
+    padding: 15px; /* Padding for fields */
+    margin: 10px 0; /* Margin around fields */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    color: #fff; /* Text color */
+    transition: background 0.3s ease; /* Smooth background change */
+}
+
+/* Placeholder Styles */
+.input-field::placeholder, .textarea-field::placeholder {
+    color: #ff6ec4; /* Placeholder color */
+    opacity: 0.7; /* Slightly transparent */
+}
+
+/* Text Area */
+.textarea-field {
+    height: 100px; /* Height for the textarea */
+}
+
+/* Submit Button */
+.submit-button {
+    background: #ff6ec4; /* Button background color */
+    color: #000; /* Button text color */
+    border: none; /* Remove border */
+    padding: 15px 30px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease; /* Smooth background change */
+    font-size: 1.2rem; /* Button font size */
+    margin-top: 10px; /* Space above button */
+}
+
+.submit-button:hover {
+    background: #7873f5; /* Background color on hover */
+}
+
+/* Trusted Container */
+.trusted-container {
+    margin-top: 30px; /* Space above trusted container */
+}
+
+/* Trusted Text */
+.trusted-text {
+    position: relative;
+    top: 380px;
+    right: 900px;
+    font-size: 1.5rem; /* Size for the trusted text */
+    margin-bottom: 10px; /* Space below trusted text */
+}
+
+/* Social Links */
+.social-links {
+    position: relative;
+    top: 399px;
+    right: 420px;
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center social icons */
+    flex-wrap: wrap; /* Allow wrapping */
+    margin-top: 10px; /* Space above social links */
+    border-top: 2px solid #ff6ec4; /* Border above social icons */
+    padding-top: 10px; /* Padding above the social links */
+}
+
+/* Social Icon Styles */
+.social-icon {
+    margin: 10px; /* Space between icons */
+    font-size: 2rem; /* Icon size */
+    color: #fff; /* Icon color */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+}
+
+/* Social Icon Colors */
+.social-icon.fb:hover {
+    color: #3b5998; /* Facebook color */
+}
+
+.social-icon.insta:hover {
+    color: #c13584; /* Instagram color */
+}
+
+.social-icon.tiktok:hover {
+    color: #ffffff; /* TikTok color */
+}
+
+.social-icon.x:hover {
+    color: #1DA1F2; /* X color */
+}
+
+.social-icon.yt:hover {
+    color: #FF0000; /* YouTube color */
+}
+
+.social-icon.binance:hover {
+    color: #F3BA2F; /* Binance color */
+}
+
+.social-icon.telegram:hover {
+    color: #0088CC; /* Telegram color */
+}
+
+.social-icon.pinterest:hover {
+    color: #E60023; /* Pinterest color */
+}
+
+.social-icon.blogspot:hover {
+    color: #4285F4; /* Blogspot color */
+}
+
+/* Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff6ec4, 0 0 20px #ff6ec4, 0 0 30px #ff6ec4;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff6ec4, 0 0 30px #ff6ec4, 0 0 40px #ff6ec4;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .input-field, .textarea-field {
+        width: 90%; /* Wider fields on smaller screens */
+    }
+    .contact-heading {
+        top: 50px; /* Adjust top positioning for smaller screens */
+        font-size: 2rem; /* Optional: adjust font size for better readability */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.products-section {
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    position: relative;
+    top: 70px;
+}
+
+.products-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease forwards;
+}
+
+.products-container h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    animation: slideIn 1s ease forwards;
+}
+
+.products-container p {
+    font-size: 1.5rem;
+    color: #fff;
+    opacity: 0.9;
+    animation: slideIn 1s ease forwards;
+}
+
+.products-container i {
+    color: #00ffff;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.products-container i:hover {
+    transform: scale(1.2);
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .products-container {
+        padding: 30px;
+    }
+
+    .products-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .products-container p {
+        font-size: 1.2rem;
+    }
+}

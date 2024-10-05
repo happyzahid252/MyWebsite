@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsalan Zahid - Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #080808;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .blog-section {
+            padding: 60px;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
+        
+        .blog-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff6ec4;
+            margin-bottom: 40px;
+            animation: heading-fade 1.5s ease-in-out;
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .blog-card {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .blog-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .blog-card h2 {
+            font-size: 1.7rem;
+            color: #ff6ec4;
+            margin: 15px 0;
+        }
+        
+        .blog-card p {
+            font-size: 1rem;
+            color: #bbb;
+            line-height: 1.6;
+        }
+        
+        .featured-blog {
+            grid-column: span 2;
+            background-color: #333;
+        }
+        
+        .read-more {
+            padding: 10px 20px;
+            background-color: #ff6ec4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: #7873f5;
+            transform: scale(1.1);
+        }
+        
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            margin: 100px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            color: #fff;
+            text-align: left;
+        }
+        
+        .modal-content h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: #ff6ec4;
+        }
+        
+        .close-modal {
+            float: right;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        /* Heading Animation */
+        @keyframes heading-fade {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+        
+            .featured-blog {
+                grid-column: span 1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navlogo">
+            <a href="index.html">Arsalan Zahid</a>
+        </div>
+        <div class="navlinks">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="product.html"><i class="fas fa-box"></i> Products</a>
+            <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <!-- Hamburger Icon for Responsive Mode -->
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+
+    <section class="blog-section">
+        <h1 class="blog-heading" style="position: relative; top:20px">Blogs</h1>
+    
+        <div class="blog-container">
+            <!-- Featured Blog -->
+            <div class="blog-card featured-blog">
+                <img src="ARSALAN ZAHID.png" alt="Featured Blog Thumbnail">
+                <h2>AI Revolution: Leading the Way</h2>
+                <p>Discover the latest advancements in AI technology that are shaping the future of various industries...</p>
+                <button class="read-more" data-blog="AI Revolution">Read More</button>
+            </div>
+    
+            <!-- Blog 1 -->
+            <div class="blog-card">
+                <img src="AI Revolution.jpeg" alt="Blog 1 Thumbnail">
+                <h2>The Future of Web 3.0</h2>
+                <p>Web 3.0 promises a decentralized internet, reshaping how we interact with the web and digital assets...</p>
+                <button class="read-more" data-blog="Web 3.0">Read More</button>
+            </div>
+    
+            <!-- Blog 2 -->
+            <div class="blog-card">
+                <img src="CODER.avif" alt="Blog 2 Thumbnail">
+                <h2>Understanding Blockchain</h2>
+                <p>A deep dive into blockchain technology and how it is revolutionizing multiple industries...</p>
+                <button class="read-more" data-blog="Blockchain">Read More</button>
+            </div>
+    
+            <!-- Blog 3 -->
+            <div class="blog-card">
+                <img src="The Future of Web 3.0.jpeg" alt="Blog 3 Thumbnail">
+                <h2>Robotics in Healthcare</h2>
+                <p>How robots are transforming healthcare, enhancing surgery precision, and improving patient outcomes...</p>
+                <button class="read-more" data-blog="Robotics">Read More</button>
+            </div>
+    
+            <!-- Blog 4 -->
+            <div class="blog-card">
+                <img src="ARSALAN ZAHID.png" alt="Blog 4 Thumbnail">
+                <h2>Cybersecurity Threats</h2>
+                <p>The evolving landscape of cyber threats and strategies to protect your digital assets...</p>
+                <button class="read-more" data-blog="Cybersecurity">Read More</button>
+            </div>
+        </div>
+    
+        <!-- Modal for Read More -->
+        <div id="blog-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-body"></p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for Modal
+document.addEventListener('DOMContentLoaded', () => {
+    const readMoreButtons = document.querySelectorAll('.read-more');
+    const modal = document.getElementById('blog-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const closeModalButton = document.querySelector('.close-modal');
+
+    const blogDetails = {
+        "AI Revolution": "AI Revolution: Discover how AI is changing industries and daily life through cutting-edge technologies that push the boundaries of innovation.",
+        "Web 3.0": "Web 3.0: Dive into the world of decentralized internet and blockchain-driven applications that will reshape the future of digital interactions.",
+        "Blockchain": "Blockchain Explained: Explore the core principles of blockchain technology and its wide-ranging impact on industries and economies.",
+        "Robotics": "Robotics in Healthcare: Learn how robotics are advancing healthcare, improving patient care, and enhancing surgical precision.",
+        "Cybersecurity": "Cybersecurity: Understand the modern threats and how individuals and businesses can protect their digital assets from cyber attacks."
+    };
+
+    // Show modal when Read More is clicked
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const blogKey = this.getAttribute('data-blog');
+            if (blogDetails[blogKey]) {
+                modalTitle.innerText = blogKey;
+                modalBody.innerText = blogDetails[blogKey];
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    // Close modal when clicking the close button
+    closeModalButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
